@@ -8,7 +8,13 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
+/* GET question page. */
 router.get('/question', quizController.question);
+/* GET answer page. */
 router.get('/check',    quizController.check);
+/* GET author page. */
+router.get("/author", function(req, res) {
+	res.render("author");
+});
 
 module.exports = router;
