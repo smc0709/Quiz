@@ -8,10 +8,11 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-/* GET question page. */
-router.get('/question', quizController.question);
-/* GET answer page. */
-router.get('/check',    quizController.check);
+// Definición de rutas de /quizzes
+router.get('/quizzes',                     quizController.index);
+router.get('/quizzes/:quizId(\\d+)',       quizController.show);
+router.get('/quizzes/:quizId(\\d+)/check', quizController.check);
+
 /* GET author page. */
 router.get("/author", function(req, res) {
 	res.render("author");
